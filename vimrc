@@ -14,6 +14,7 @@ Plugin 'gmarik/Vundle.vim'
 " Add all plugins below here
 Bundle 'Valloric/YouCompleteMe'
 Plugin 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
+Plugin 'scrooloose/nerdtree'
 
 " All plugins must be added before the following line
 call vundle#end()
@@ -80,3 +81,18 @@ au BufRead,BufNewFile *.py,*.pyw,*.c,*.h,*.js match BadWhitespace /\s\+$/
 
 " System clipboard (on Mac) - allow vim to use system clipboard
 set clipboard=unnamed
+
+" Map NERDTree to Ctrl+n
+map <C-n> :NERDTreeToggle<CR>
+" Ignore .pyc files in NERDTree
+let NERDTreeIgnore=['\.pyc$', '\~$']
+
+"python with virtualenv support
+py << EOF
+import os
+import sys
+if 'VIRTUAL_ENV' in os.environ:
+    project_base_dir = os.environ['VIRTUAL_ENV']
+    activate_this = os.path.join(project_base_dir, 'bin/activate_this.py')
+    execfile(activate_this, dict(__file__=activate_this))
+EOF
