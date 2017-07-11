@@ -12,7 +12,6 @@ call vundle#begin()
 Plugin 'gmarik/Vundle.vim'
 
 " Add all plugins below here
-Bundle 'Valloric/YouCompleteMe'
 Plugin 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
 Plugin 'scrooloose/nerdtree'
 
