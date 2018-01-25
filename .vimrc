@@ -85,6 +85,8 @@ set clipboard=unnamed
 map <C-n> :NERDTreeToggle<CR>
 " Ignore .pyc files in NERDTree
 let NERDTreeIgnore=['\.pyc$', '\~$']
+" Ignore __pycache__ directories
+let NERDTreeIgnore=['__pycache__[[dir]]', '\~$']
 
 "python with virtualenv support
 py << EOF
